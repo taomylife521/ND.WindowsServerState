@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6E28F9C-6CD4-42A0-90DF-24E6536DD710}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WindowsServerState</RootNamespace>
+    <AssemblyName>WindowsServerState</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\svn\bihuwalking\branch\core\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\..\..\svn\bihuwalking\branch\core\Lib\Quartz.Net\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>..\..\..\svn\bihuwalking\branch\core\Lib\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conf\ConfHlep.cs" />
+    <Compile Include="Conf\kvCollection.cs" />
+    <Compile Include="Conf\kvSetting.cs" />
+    <Compile Include="Conf\ServerName.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Job\restartJob.cs" />
+    <Compile Include="Log\LogFileFolder.cs" />
+    <Compile Include="Log\LoggedCallbackDelegate.cs" />
+    <Compile Include="Log\LoggedCallbackInfo.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Log\LogTypeEnum.cs" />
+    <Compile Include="Model\GlobalVariable.cs" />
+    <Compile Include="Model\ServiceStateModel.cs" />
+    <Compile Include="MsMqMonitor\AbstractMqListener.cs" />
+    <Compile Include="MsMqMonitor\AbstractQueueMonitorOption.cs" />
+    <Compile Include="MsMqMonitor\Alarm\AlarmManger.cs" />
+    <Compile Include="MsMqMonitor\Alarm\AlarmOption.cs" />
+    <Compile Include="MsMqMonitor\Alarm\EmailAlarm.cs" />
+    <Compile Include="MsMqMonitor\Alarm\IArarm.cs" />
+    <Compile Include="MsMqMonitor\Alarm\SmsAlarm.cs" />
+    <Compile Include="MsMqMonitor\CustomEqualityComparer.cs" />
+    <Compile Include="MsMqMonitor\DefaultMqListener.cs" />
+    <Compile Include="MsMqMonitor\DefaultQueueMonitor.cs" />
+    <Compile Include="MsMqMonitor\IMqListener.cs" />
+    <Compile Include="MsMqMonitor\IQueueMonitor.cs" />
+    <Compile Include="MsMqMonitor\IQueueMonitorOption.cs" />
+    <Compile Include="MsMqMonitor\LocalJsonQueueMonitorOption.cs" />
+    <Compile Include="MsMqMonitor\MqListenerManger.cs" />
+    <Compile Include="MsMqMonitor\QueueMonitorOption.cs" />
+    <Compile Include="MsMqMonitor\QueueMonitorOptionProvider.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerMain.cs" />
+    <Compile Include="ServerStateTask.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="TheadHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="MsMqMonitor\JsonQueueMonitorOptions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="quartz_jobs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="restart.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="log4Config.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="listen.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="quartz.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

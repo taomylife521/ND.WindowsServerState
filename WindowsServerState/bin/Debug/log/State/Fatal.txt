@@ -1,0 +1,10 @@
+2018-12-20 11:49:10,206 [1] 服务“WindowsServerState.Service”有零个应用程序(非基础结构)终结点。这可能是因为未找到应用程序的配置文件，或者在配置文件中未找到与服务名称匹配的服务元素，或者服务元素中未定义终结点。
+System.InvalidOperationException: 服务“WindowsServerState.Service”有零个应用程序(非基础结构)终结点。这可能是因为未找到应用程序的配置文件，或者在配置文件中未找到与服务名称匹配的服务元素，或者服务元素中未定义终结点。
+   在 System.ServiceModel.Description.DispatcherBuilder.EnsureThereAreApplicationEndpoints(ServiceDescription description)
+   在 System.ServiceModel.Description.DispatcherBuilder.InitializeServiceHost(ServiceDescription description, ServiceHostBase serviceHost)
+   在 System.ServiceModel.ServiceHostBase.InitializeRuntime()
+   在 System.ServiceModel.ServiceHostBase.OnBeginOpen()
+   在 System.ServiceModel.ServiceHostBase.OnOpen(TimeSpan timeout)
+   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   在 System.ServiceModel.Channels.CommunicationObject.Open()
+   在 WindowsServerState.ServerMain.Start() 位置 D:\myapp\ND.WindowsServerState\WindowsServerState\ServerMain.cs:行号 30

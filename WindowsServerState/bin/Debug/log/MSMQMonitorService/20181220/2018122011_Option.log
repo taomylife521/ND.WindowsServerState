@@ -1,0 +1,6 @@
+2018-12-20 11:49:10,987 [6] -------------------读取本地json配置开始(2018/12/20 11:49:10)---------------------------------
+2018-12-20 11:49:11,856 [6] 刷新配置文件:[{"QueueName":"bx_balance","ThresholdMaxCount":10000,"AlarmMaxCount":3,"AlarmInterval":300,"AlarmType":0,"AlarmPerson":"514935323@qq.com","IsClearQueue":false,"WorkTime":"07:00-21:00"},{"QueueName":"bx_reconciliationlist","ThresholdMaxCount":10000,"AlarmMaxCount":3,"AlarmInterval":300,"AlarmType":0,"AlarmPerson":"514935323@qq.com","IsClearQueue":false,"WorkTime":"07:00-21:00"}]
+2018-12-20 11:49:11,856 [6] -------------------读取本地json配置结束(2018/12/20 11:49:11)---------------------------------
+2018-12-20 11:52:56,386 [6] -------------------读取本地json配置开始(2018/12/20 11:52:56)---------------------------------
+2018-12-20 11:52:59,606 [6] 刷新配置文件:[{"QueueName":"bx_balance","ThresholdMaxCount":10000,"AlarmMaxCount":3,"AlarmInterval":300,"AlarmType":0,"AlarmPerson":"514935323@qq.com","IsClearQueue":false,"WorkTime":"07:00-21:00"},{"QueueName":"bx_reconciliationlist","ThresholdMaxCount":10000,"AlarmMaxCount":3,"AlarmInterval":300,"AlarmType":0,"AlarmPerson":"514935323@qq.com","IsClearQueue":false,"WorkTime":"07:00-21:00"}]
+2018-12-20 11:52:59,606 [6] -------------------读取本地json配置结束(2018/12/20 11:52:59)---------------------------------

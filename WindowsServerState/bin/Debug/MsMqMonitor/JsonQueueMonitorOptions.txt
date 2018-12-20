@@ -1,0 +1,13 @@
+﻿[
+	
+	{
+		"QueueName":"bx_test",
+		"ThresholdMaxCount":10000,
+		"AlarmMaxCount":3,
+		"AlarmInterval":300,
+		"AlarmType":0,
+		"AlarmPerson":"",
+		"IsClearQueue":false,
+		"WorkTime":"07:00-21:00"
+	}
+]

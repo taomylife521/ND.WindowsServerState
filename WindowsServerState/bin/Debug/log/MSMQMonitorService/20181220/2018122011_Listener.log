@@ -1,0 +1,22 @@
+2018-12-20 11:49:09,208 [6] ------------------开启监听:(2018/12/20 11:49:08)-----------------------
+2018-12-20 11:49:10,741 [6] 扫描到监听队列数量:12
+2018-12-20 11:52:51,282 [6] ------------------开启监听:(2018/12/20 11:52:51)-----------------------
+2018-12-20 11:52:53,719 [6] 扫描到监听队列数量:12
+2018-12-20 11:53:38,659 [6] queuename:private$\bx_renewal,count:0
+queuename:private$\metrics,count:42
+queuename:private$\ai_renewal,count:0
+queuename:private$\ai_quote,count:0
+queuename:private$\ai_submit,count:0
+queuename:private$\ai_vehicle,count:0
+queuename:private$\tester_msgqueue_assist_jobs,count:0
+queuename:private$\tester_msgqueue_jobs,count:0
+queuename:private$\bxquote,count:0
+queuename:private$\bx_modifycarlicense,count:0
+queuename:private$\bx_reconciliationlist,count:0
+queuename:private$\bx_balance,count:0
+
+2018-12-20 11:53:38,660 [6] ------------------监听结束:(2018/12/20 11:53:38)-----------------------
+
+
+2018-12-20 11:54:38,667 [6] ------------------开启监听:(2018/12/20 11:54:38)-----------------------
+2018-12-20 11:54:38,774 [6] 扫描到监听队列数量:12
